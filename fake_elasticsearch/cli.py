@@ -6,9 +6,20 @@ from elasticsearch.client.utils import query_params
 
 class FakeElasticsearch(Elasticsearch):
 
-    @query_params(
-        'op_type', 'parent', 'pipeline', 'refresh', 'routing',
-        'timeout', 'timestamp', 'ttl', 'version', 'version_type',
-        'wait_for_active_shards')
-    def index(self, index, doc_type, body, id=None, params=None):
+     @query_params(
+        "if_seq_no",
+        "if_primary_term",
+        "op_type",
+        "parent",
+        "pipeline",
+        "refresh",
+        "routing",
+        "timeout",
+        "timestamp",
+        "ttl",
+        "version",
+        "version_type",
+        "wait_for_active_shards",
+    )
+    def index(self, index, body, doc_type="_doc", id=None, params=None):
         pass
