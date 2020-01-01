@@ -6,7 +6,7 @@ from elasticsearch.client.utils import query_params
 
 class FakeElasticsearch(Elasticsearch):
 
-     @query_params(
+    @query_params(
         "if_seq_no",
         "if_primary_term",
         "op_type",
@@ -19,7 +19,6 @@ class FakeElasticsearch(Elasticsearch):
         "ttl",
         "version",
         "version_type",
-        "wait_for_active_shards",
-    )
+        "wait_for_active_shards")
     def index(self, index, body, doc_type="_doc", id=None, params=None):
         pass
